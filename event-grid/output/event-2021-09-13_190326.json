@@ -1,0 +1,10 @@
+[
+  {
+    "id": "c09c1abd-bf8e-4543-8e18-6f1bf6ecd525",
+    "eventType": "TerraformEvent",
+    "subject": "apply/end",
+    "eventTime": "2021-09-13T19:03:26+0000",
+    "data": {},
+    "dataVersion": "1.0"
+  }
+]

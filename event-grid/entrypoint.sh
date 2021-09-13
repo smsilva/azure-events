@@ -5,14 +5,13 @@ EVENTS_JSON_FILE="${EVENTS_OUTPUT_DIRECTORY}/${EVENTS_JSON_FILE_NAME}"
 EVENT_ID="$(uuidgen)"
 EVENT_TIME="$(date +%Y-%m-%dT%H:%M:%S%z)"
 
-echo ""
-echo "EVENT_GRID_TOPIC_ENDPOINT............: ${EVENT_GRID_TOPIC_ENDPOINT}"
-echo "EVENT_GRID_TOPIC_KEY.................: ${#EVENT_GRID_TOPIC_KEY}"
-echo "EVENT_ID.............................: ${EVENT_ID}"
-echo "EVENT_TIME...........................: ${EVENT_TIME}"
-echo "EVENT_TYPE...........................: ${EVENT_TYPE}"
-echo "EVENT_SUBJECT........................: ${EVENT_SUBJECT}"
-echo "EVENTS_JSON_FILE.....................: ${EVENTS_JSON_FILE}"
+echo "EVENT_GRID_TOPIC_ENDPOINT.: ${EVENT_GRID_TOPIC_ENDPOINT}"
+echo "EVENT_GRID_TOPIC_KEY......: ${#EVENT_GRID_TOPIC_KEY}"
+echo "EVENT_ID..................: ${EVENT_ID}"
+echo "EVENT_TIME................: ${EVENT_TIME}"
+echo "EVENT_TYPE................: ${EVENT_TYPE}"
+echo "EVENT_SUBJECT.............: ${EVENT_SUBJECT}"
+echo "EVENTS_JSON_FILE..........: ${EVENTS_JSON_FILE}"
 echo ""
 
 cat <<EOF > "${EVENTS_JSON_FILE}"
@@ -27,10 +26,6 @@ cat <<EOF > "${EVENTS_JSON_FILE}"
   }
 ]
 EOF
-
-find /opt/output/
-
-echo ""
 
 curl \
   --include \
