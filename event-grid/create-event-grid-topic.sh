@@ -27,6 +27,9 @@ EVENT_GRID_TOPIC_KEY=$(az eventgrid topic key list \
   --query "key1" \
   --output tsv)
 
+export EVENT_GRID_TOPIC_ENDPOINT
+export EVENT_GRID_TOPIC_KEY
+
 echo "COMPANY_NAME............................: ${COMPANY_NAME}" && \
 echo "PLATFORM_NAME...........................: ${PLATFORM_NAME}" && \
 echo "EVENT_GRID_TOPIC_RESOURCE_GROUP_NAME....: ${EVENT_GRID_TOPIC_RESOURCE_GROUP_NAME}" && \
