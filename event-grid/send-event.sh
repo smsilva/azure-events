@@ -21,17 +21,19 @@ EVENT_GRID_TOPIC_KEY=$(az eventgrid topic key list \
 EVENT_TYPE="TerraformEvent"
 EVENT_SUBJECT="apply/start"
 
-echo "COMPANY_NAME............................: ${COMPANY_NAME}" && \
-echo "PLATFORM_NAME...........................: ${PLATFORM_NAME}" && \
-echo "EVENT_GRID_TOPIC_RESOURCE_GROUP_NAME....: ${EVENT_GRID_TOPIC_RESOURCE_GROUP_NAME}" && \
-echo "EVENT_GRID_TOPIC_LOCATION...............: ${EVENT_GRID_TOPIC_LOCATION}" && \
-echo "EVENT_GRID_TOPIC_ENDPOINT...............: ${EVENT_GRID_TOPIC_ENDPOINT}" && \
-echo "EVENT_GRID_TOPIC_NAME...................: ${EVENT_GRID_TOPIC_NAME}" && \
-echo "EVENT_GRID_TOPIC_KEY....................: ${#EVENT_GRID_TOPIC_KEY}" && \
-echo "EVENT_TYPE..............................: ${EVENT_TYPE}" && \
-echo "EVENT_SUBJECT...........................: ${EVENT_SUBJECT}"
+LOCAL_TERRAFORM_OUTPUT_DIRECTORY="${PWD}/output"
+#mkdir -p "${LOCAL_TERRAFORM_OUTPUT_DIRECTORY}"
 
-LOCAL_TERRAFORM_OUTPUT_DIRECTORY="${PWD}/output" && mkdir -p "${LOCAL_TERRAFORM_OUTPUT_DIRECTORY}"
+echo "COMPANY_NAME.........................: ${COMPANY_NAME}" && \
+echo "PLATFORM_NAME........................: ${PLATFORM_NAME}" && \
+echo "EVENT_GRID_TOPIC_RESOURCE_GROUP_NAME.: ${EVENT_GRID_TOPIC_RESOURCE_GROUP_NAME}" && \
+echo "EVENT_GRID_TOPIC_LOCATION............: ${EVENT_GRID_TOPIC_LOCATION}" && \
+echo "EVENT_GRID_TOPIC_ENDPOINT............: ${EVENT_GRID_TOPIC_ENDPOINT}" && \
+echo "EVENT_GRID_TOPIC_NAME................: ${EVENT_GRID_TOPIC_NAME}" && \
+echo "EVENT_GRID_TOPIC_KEY.................: ${#EVENT_GRID_TOPIC_KEY}" && \
+echo "EVENT_TYPE...........................: ${EVENT_TYPE}" && \
+echo "EVENT_SUBJECT........................: ${EVENT_SUBJECT}"
+echo "LOCAL_TERRAFORM_OUTPUT_DIRECTORY.....: ${LOCAL_TERRAFORM_OUTPUT_DIRECTORY}"
 
 docker run \
   -v "${LOCAL_TERRAFORM_OUTPUT_DIRECTORY}:/opt/output/" \
