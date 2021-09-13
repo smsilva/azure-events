@@ -3,7 +3,7 @@
 ## Build Image
 
 ```bash
-docker build -t silviosilva/azure-event-grid-topic:1.0 .
+docker build -t azure-event-grid-topic .
 ```
 
 ## Send an Event

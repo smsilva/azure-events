@@ -29,4 +29,4 @@ docker run \
   -e EVENT_GRID_TOPIC_KEY="${EVENT_GRID_TOPIC_KEY?}" \
   -e EVENT_TYPE="${EVENT_TYPE?}" \
   -e EVENT_SUBJECT="${EVENT_SUBJECT?}" \
-  silviosilva/azure-event-grid-topic:1.0
+  azure-event-grid-topic:1.0
