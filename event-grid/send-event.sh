@@ -4,7 +4,6 @@ COMPANY_NAME="silvios"
 PLATFORM_NAME="wasp"
 EVENT_GRID_TOPIC_RESOURCE_GROUP_NAME="${PLATFORM_NAME}-events"
 EVENT_GRID_TOPIC_NAME="${COMPANY_NAME}-${PLATFORM_NAME}-events"
-EVENT_GRID_TOPIC_LOCATION="centralus"
 
 EVENT_GRID_TOPIC_ENDPOINT=$(az eventgrid topic show \
   --name "${EVENT_GRID_TOPIC_NAME}" \
@@ -30,4 +29,4 @@ docker run \
   -e EVENT_GRID_TOPIC_KEY="${EVENT_GRID_TOPIC_KEY?}" \
   -e EVENT_TYPE="${EVENT_TYPE?}" \
   -e EVENT_SUBJECT="${EVENT_SUBJECT?}" \
-  silviosilva/azure/event:1.0
+  silviosilva/azure-event-grid-topic:1.0
