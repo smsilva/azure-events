@@ -9,6 +9,15 @@
 . create-event-grid-topic.sh
 ```
 
+or
+
+```bash
+cd azure-platform-foundation/src
+
+export EVENT_GRID_TOPIC_ENDPOINT=$(terraform output -raw platform_eventgrid_topic_endpoint)
+export EVENT_GRID_TOPIC_KEY=$(     terraform output -raw platform_eventgrid_topic_primary_access_key) 
+```
+
 ## Build Image
 
 ```bash
